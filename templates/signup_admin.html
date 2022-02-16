@@ -1,0 +1,64 @@
+{% extends "base/base.html" %}
+
+{% block title %} Sign up {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/signup_admin_style.css')}}" />
+{% endblock %}
+
+{% block namesheet %}Sign up{% endblock %}
+
+{% block content %}
+<main>
+    <div class="all_div">
+        <div class="div_img_user" id="div_img_user">
+            <div class="items_img_user">
+                <p class="img_perfil_txt"><b>Proceso de registro</b></p>
+                <img src="{{url_for('static',filename='img/user.png')}}" alt="User" class="img_user" />
+            </div>
+        </div>
+        
+        <form action="/dashboard/registro" method="POST" class="info" id="info">
+            <div class="info_user" id="info_user">
+                <div class="items_info_user">
+                    <div class="espacios">
+                        <p class="nombre_txt"><b>Nombre completo:<font color="red">*</font></b></p>
+                        <input type="text" class="txt_input" id="name" name="name">
+                    </div>
+    
+                    <div class="espacios">
+                        <p class="email_txt"><b>Correo electrónico:<font color="red">*</font></b></p>
+                        <input type="email" class="txt_input" id="email" name="email">    
+                    </div>
+    
+                    <div class="espacios">
+                        <p class="telefono_txt"><b>Número de telefono:<font color="red">*</font></b></p>
+                        <input type="text" class="txt_input" id="phone" name="phone">    
+                    </div>
+                </div>
+            </div>
+        
+            <div class="credenciales" id="credenciales">
+                <div class="items_credenciales">
+                    <div class="espacios">
+                        <p class="pass_txt"><b>Contraseña:<font color="red">*</font></b></p>
+                        <input type="password" class="txt_input" id="pass" name="password">
+                    </div>
+                    
+                    <div class="espacios">
+                        <p class="pass2_txt"><b>Confirmar contraseña:<font color="red">*</font></b></p>
+                        <input type="password" class="txt_input" id="check_pass" name="check_pass">
+                    </div>
+                    <input type="submit"  value="Como administrador" id="btn_admin">
+                    <input type="submit"  value="Como usuario" id="btn_user">
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static',filename='js/registro_dashboard.js')}}" type="module"></script>
+{% endblock %}

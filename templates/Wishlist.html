@@ -1,0 +1,47 @@
+{% extends "base/base.html" %}
+
+{% block title %} Lista de Deseos {% endblock %}
+{% block stylesheet %}
+<!--referencia del css-->
+<link rel="stylesheet" href="{{url_for('static',filename='css/wishlist.css')}}" />
+{% endblock %}
+
+{% block namesheet %} LISTA DE DESEOS {% endblock %}
+
+{% block content %}
+<main>
+  <!--PROGAMAR VISTA-->
+  <form id="form_deseos" action="/wishlist" method="POST">
+    {% for r in row  %}
+      <div class="info_prod_deseo">
+        <div>
+        {% if r["URL_prod"] == None %}
+          <img src="/static/img/paquete.png" alt="producto" class="prod_list" />
+        {% else %}
+          <img src="{{r['URL_prod']}}" alt="producto" class="prod_list" />
+        {% endif %}
+        </div>
+        <div class="cont_prod">
+          <h3 class="nombre_producto" name="nombre_prod" id="name_pd">{{r["Nombre"]}}</h3>
+          <p class="txt_descripcion" name="descripcion">{{r["Descripcion"]}}</p>
+          <h4 class="alinea">Precio:</h4>
+          <p class="alinea" name="precio">{{r["Precio"]}}</p>
+        </div>
+        <div class="botones">
+          <img src="{{url_for('static',filename='img/Cart.png')}}" alt="Carrito" class="logo_btns"/>
+          <img src="{{url_for('static',filename='img/Heartmenos.png')}}" alt="Corazon" class="logo_btns" id="Corazon"/>
+          <input type="submit" value="Comprar" class="btn_c" id="btn_comprar">
+          <input type="submit" value="Eliminar" class="btn_c" id="btn_borrar">
+        </div>
+      </div>
+    {% endfor %}
+  
+  </form>
+  
+</main>
+{% endblock %}
+
+{% block script %}
+<!--BLOQUE SCRIPT-->
+<script src="{{url_for('static',filename='js/wishlist.js')}}" type="module"></script>
+{% endblock %}

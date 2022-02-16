@@ -1,0 +1,173 @@
+.all_div{
+    width: 100%;
+    height: 533px;
+    background: white;
+    color: black;
+    padding: 10px;
+    font-size:16px;
+    display:flex;
+}
+
+.titulo{
+    font-size:20px;
+    text-align:center;
+}
+
+input[type=button]{
+    font-size:16px;
+    padding: 5px;
+}
+
+input[type=submit]{
+    font-size:16px;
+    padding: 5px;
+}
+
+input[type=file]{
+    font-size:14px;
+    padding: 5px;
+}
+
+.input_txt{
+    width: 250px;
+}
+/* Divisor 1 */
+.cont_1{
+    width: 40%;
+    height: 513px;
+    padding: 10px;
+    border-right: 1px solid;
+}
+
+.user_info{
+    position:relative;
+    top: 90px;
+    left:55px;
+}
+
+.espacio{
+    padding-top: 20px;
+    margin-left: 175px;
+}
+
+.imagenes{
+    display:flex;
+}
+
+.iconos{
+    display: flex;
+}
+
+.img_info{
+    display: block;
+    padding-bottom: 10%;
+}
+
+.img_user{
+    width: 150px;
+    height: 150px;
+    padding: 5px;
+}
+
+.img_edit{
+    width: 30px;
+    height: 30px;
+    position:relative;
+    top: 120px;
+    right: 30px;
+}
+
+.datos{
+    display:flex;
+}
+
+.img_edit2{
+    width: 20px;
+    height: 20px;
+    margin-left:10px;
+}
+
+.btns_img{
+    display:block;
+}
+/* Divisor 2 */
+.opciones{
+    width:60%;
+    padding: 10px;
+}
+/* Divisor 2.1 */
+.interactions{
+    height: 50%;
+    padding:10px;
+    border-bottom: 1px solid;
+}
+
+.cont_2{
+    position:relative;
+    top: 70px;
+    left:160px;
+    margin-right: 140px;
+}
+.compras{
+    position:relative;
+    left: 150px;
+}
+.logout{
+    position:relative;
+    top: 70px;
+    right: 90px;
+}
+
+.img_interaction{
+    width: 30px;
+    height: 30px;
+}
+
+.logout_img{
+    width: 25px;
+    height: 25px;
+    position:relative;
+    left: 262px;
+    bottom: 37px;
+}
+
+.cart_img{
+    position:relative;
+    left: 385px;
+    bottom: 82px;
+}
+
+.heart_img{
+    position:relative;
+    left: 126px;
+    bottom: 50px;
+}
+/* Divisor 2.2 */
+.change_pass{
+    height: 50%;
+    padding:10px;   
+}
+
+.cont_3{
+    position:relative;
+    top: 32px;
+    left:100px;
+    margin-right: 140px;
+}
+
+.cambio{
+    display:flex;
+    padding-bottom: 20px;
+}
+
+.p1{
+    margin-left: 90px;
+}
+
+.p2{
+    margin-left: 10px;
+}
+
+.Guardar_pass{
+    margin-left: 165px;
+}

@@ -1,0 +1,49 @@
+{% extends "base/base.html" %} {% block title %}Inicio TJX e-Commerce{% endblock %}
+{% block stylesheet %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='CSS/Index_style.css')}}"
+/>
+{% endblock %} {% block namesheet %}INICIO{% endblock %} {% block content %}
+<main>
+    <div class="welcome">
+      <div class="mision">
+        <h2>Nuestra Mision</h2>
+        <p>Queremos llevarte prodcutos de calidad y al mejor precio, para que disfrutes de calidad y economia</p>
+      </div>
+      <div class="vision">
+        <h2>Nuestra Vision</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo iure nesciunt provident deleniti.</p>
+      </div>        
+    </div>
+
+  <div class="entrada">
+    <h1>Productos destacados!!</h1>
+    <hr />
+  </div>
+
+  <div class="products">
+
+    {% for r in row  %}
+    <div class="products_item">
+      <h2>{{r["Nombre"]}}</h2>
+      {% if r["URL_prod"] == None %}
+        <img src="/static/img/paquete.png" alt="" />
+      {% else %}
+        <img src="/static/img/img_products/{{r['URL_prod']}}" alt="" />
+      {% endif %}
+      <p>{{r["Descripcion"]}}</p>
+      <a href="/producto/{{r['Nombre']}}"><button type="submit">Comprar</button></a>
+    </div>
+    {% endfor %}
+
+  </div>
+</main>
+{% endblock %} 
+
+{% block script %}
+<script
+  src="{{url_for('static',filename='js/menu.js')}}"
+  type="module"
+></script>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "base/base.html" %}
+
+{% block title %} Perfil {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile_style.css')}}" />
+{% endblock %}
+
+{% block namesheet %}Perfil{% endblock %}
+
+{% block content %}
+<main>
+    <form action="/perfil" method="POST" class="all_div" id="form_my_profile" enctype="multipart/form-data">
+        <div class="cont_1">
+            <div class="user_info">      
+                <div class="imagenes">
+                    <div class="iconos">
+                        <img src="{{path_img}}" alt="User" class="img_user" />
+                        <img src="{{url_for('static',filename='img/editar.png')}}" alt="editar" class="img_edit" />   
+                    </div>
+                    <div class="img_options">
+                        <div class="img_info">
+                            <p><b>Archivo: </b></p>
+                            <div class="btns_img">
+                                <input type="file" name="archivo" accept=".png, .jpeg, .jpg">
+                                <input type="submit" name="enviar" id="enviar" value="Guardar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info">
+                    <div class="espacio">
+                        <p><b>Nombre completo:</b></p>
+                        <div class="datos">
+                            <input type="text" class="input_txt" placeholder="{{name}}" id="name" name="name">
+                            <img src="{{url_for('static',filename='img/editar.png')}}" alt="editar" class="img_edit2" />
+                        </div>
+                    </div>
+
+                    <div class="espacio">
+                        <p><b>Número de telefono:</b></p>
+                        <div class="datos">
+                            <input type="text" class="input_txt" placeholder="{{phone}}" id="phone" name="phone">
+                            <img src="{{url_for('static',filename='img/editar.png')}}" alt="editar" class="img_edit2" />
+                        </div>
+                    </div>
+                    
+                    <div class="espacio">
+                        <p><b>Correo electrónico:</b></p>
+                        <div class="datos">
+                            <p>{{email}}</p>
+                        </div>
+                    </div>
+                    
+                    <div class="espacio">
+                        <input type="submit" class="Guardar_info" value="Guardar informacion" id="save_info">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    
+        <div class="opciones">
+            <div class="interactions">
+                <p class="titulo"><b>Mis interacciones:</b></p>
+                <div class="cont_2">
+
+                    <a href="/wishlist">
+                        <input type="button" class="wishlist" value="Mi lista de deseos" >
+                    </a>
+                    <a href="/compras">
+                        <input type="button" class="compras" value="Mis compras" >
+                    </a>
+                    <a href="/logout">
+                        <input type="button" class="logout" value="Cerrar sesión" id="logout">
+                    </a>
+                    <img src="{{url_for('static',filename='img/heart.png')}}" alt="heart" class="img_interaction heart_img" />
+                    <img src="{{url_for('static',filename='img/cart.png')}}" alt="cart" class="img_interaction cart_img" />
+                    <img src="{{url_for('static',filename='img/menu_close.png')}}" alt="logout" class="img_interaction logout_img" />
+                </div>
+            </div>
+        
+            <div class="change_pass">
+                <p class="titulo"><b>Cambiar contraseña:</b></p>
+                <div class="cont_3">
+                    <div class="cambio">
+                        <p><b>Contraseña actual:<font color="red">*</font></b></p>
+                        <input type="password" class="input_txt p1" id="old_pass" name="old_pass">
+                    </div>
+        
+                    <div class="cambio">
+                        <p><b>Nueva contraseña:<font color="red">*</font></b></p>
+                        <input type="password" class="input_txt p1" id="new_pass" name="new_pass">
+                    </div>
+        
+                    <div class="cambio">
+                        <p><b>Confirmar nueva contraseña:<font color="red">*</font></b></p>
+                        <input type="password" class="input_txt p2" id="check_pass" name="check_pass">
+                    </div>
+                    <input type="submit" class="Guardar_pass" value="Guardar contraseña" id="save_pass">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static',filename='js/profile.js')}}" type="module"></script>
+{% endblock %}
