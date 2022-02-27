@@ -1,0 +1,78 @@
+{% extends "base/base.html" %} {% block title %}Inicio TJX e-Commerce{% endblock %}
+{% block stylesheet %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static',filename='CSS/eliminarproducto_style .css')}}"
+/>
+<script src="{{url_for('static',filename='js/eliminar_producto.js')}}"></script>
+
+{% endblock %} {% block namesheet %}TIENDA{% endblock %} {% block content %}
+<main>
+
+  <div class="products">
+    <div class="products_item">
+      <h2>Calzado</h2>
+      <img src="{{url_for('static',filename='img/zapato.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+      
+    </div>
+    <div class="products_item">
+      <h2>Calzado</h2>
+      <img src="{{url_for('static',filename='img/zapato_2.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+    </div>
+    <div class="products_item">
+      <h2>Calzado</h2>
+      <img src="{{url_for('static',filename='img/zapato_3.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+    </div>
+    <div class="products_item">
+      <h2>Prenda</h2>
+      <img src="{{url_for('static',filename='img/chaqueta.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+    </div>
+    <div class="products_item">
+      <h2>Prenda</h2>
+      <img src="{{url_for('static',filename='img/chaqueta_2.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+    </div>
+    <div class="products_item">
+      <h2>Prenda</h2>
+      <img src="{{url_for('static',filename='img/sueter.png')}}" alt="" />
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      <div class="products_buttons">
+        <button class="btn_delete" onclick='recordatorio()'><img class="icon_img" src="{{url_for('static',filename='img/delete.png')}}" alt="" /></button>
+        <a href="/editar_producto"><img class="icon_img" src="{{url_for('static',filename='img/edit.png')}}" alt="" /></a>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %} 
+
+{% block script %}
+<script
+  src="{{url_for('static',filename='js/menu.js')}}"
+  type="module"
+></script>
+<script src="{{url_for('static',filename='js/eliminar_producto.js')}}"></script>
+{% endblock %}

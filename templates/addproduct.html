@@ -1,0 +1,126 @@
+{% extends "base/base.html" %}
+
+{% block title %} Añadir producto {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/addproduct_style.css')}}" />
+{% endblock %}
+
+{% block namesheet %}Añadir Producto{% endblock %}
+
+{% block content %}
+<main>
+    <div class="ini_div">
+        <div>
+            <img src="{{url_for('static',filename='img/buscar.png')}}" alt="buscar" class="img_search" />
+        </div>
+
+        <div>
+            <input type="text" class="txt_input">
+        </div>
+        <div>
+            <p class="nombre_txt"><b>Filtrar</b></p>
+        </div>
+        <div>
+            
+            <a href="/crear_producto"><input type="button" class="agregarp" value="Añadir producto" id="btn_agregar"></a>
+        </div>
+
+    </div>
+    <br>
+
+    <table class="mitabla">
+
+        <tr>
+
+           
+            <th> <select name="Codigo de Producto" class="etiquet">
+                    <option value="">Codigo de Producto</option>
+                    <option value="value1">Value 1</option>
+                    <option value="value2">Value 2</option>
+                    <option value="value3">Value 3</option>
+                </select></th>
+
+            <th><select name="Nombre de producto" class="etiquet">
+                    <option value="">Nombre de producto</option>
+                    <option value="value1">Value 1</option>
+                    <option value="value2">Value 2</option>
+                    <option value="value3">Value 3</option>
+                </select></th>
+            <th>
+                <p class="nombre_txt"><b>Precio</b></p>
+            </th>
+
+            <th>
+                <p class="nombre_txt"><b>Descripción</b></p>
+            </th>
+            <th>
+                <p class="nombre_txt"><b>Cantidad</b></p>
+            </th>
+            <th>
+                <p class="nombre_txt"><b>Editar</b></p>
+            </th>
+
+            <th>
+                <p class="nombre_txt"><b>Borrar</b></p>
+            </th>
+        </tr>
+        {% for datoprod in datosprod %}
+        <tr>
+            <td>{{datoprod.0}}</td>
+            <td>{{datoprod.1}}</td>
+            <td>{{datoprod.3}}</td>
+            <td>{{datoprod.2}}</td>
+            <td>{{datoprod.4}}</td>
+            <td class="mitd"> <a href="/editp/{{datoprod.0}}"><img src="{{url_for('static',filename='img/editar.png')}}" alt="editar" class="img_tab"> </a>
+            </td>
+            <td class="mitd"> <a href="/deletep/{{datoprod.0}}"><img src="{{url_for('static',filename='img/papelera.png')}}" alt="eliminar" class="img_tab"></a>
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+
+
+
+    </table>
+
+    <br>
+
+
+    <div class="fin_div">
+
+        <div>
+            <p class="nombre_txt"><b>Mostrar</b></p>
+        </div>
+
+        <select name="Mostrar">
+            <option value="value1">5</option>
+            <option value="value2">10</option>
+            <option value="value3">20</option>
+        </select>
+
+        <div>
+            <p class="nombre_txt"><b>Registros</b></p>
+        </div>
+    </div>
+
+    <br>
+
+
+    <div class="ini_div">
+        <div>
+            <!--<input type="button" class="agregarp" value="Guardar" id="btn guardar"-->
+        </div>
+    </div>
+
+    <br>
+
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static',filename='js/menu.js')}}" type="module"></script>
+{% endblock %}

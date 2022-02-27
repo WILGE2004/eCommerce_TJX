@@ -1,0 +1,39 @@
+{% extends "base/base.html" %}
+
+{% block title %} Login {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/login_style.css')}}" />
+{% endblock %}
+
+{% block namesheet %}Login{% endblock %}
+
+{% block content %} 
+<main>
+
+    <form action="/login" method="POST" class="espacio">
+        <div class="info_container" id="info_container">
+            <img src="{{url_for('static',filename='img/user.png')}}" alt="User" class="img_user" />
+            
+            <p class="correo_txt"><b>Correo electrónico:</b></p>
+            <input type="email" class="txt_input" placeholder="correo@ejemplo.com" id="email_field" name="email">
+            <p class="pass_txt"><b>Contraseña:</b></p>
+            <input type="password" class="txt_input" placeholder="Contraseña" id="pass_field" name="password">
+            
+            <div class="botonera">
+                
+                <input type="submit" class="Entrar" value="Entrar"  id="btn_login">
+                <p class="o"><b>ó</b></p>
+                <a href="/registrarse">
+                    <input type="button" class="Registrarse" value="Registrarse">
+                </a>
+            </div>
+        </div>
+    </form>
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static',filename='js/menu.js')}}" type="module"></script>
+{% endblock %}

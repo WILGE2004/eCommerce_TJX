@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename='img/Logo.png')}}" />
+    <link rel="stylesheet" href="{{url_for('static',filename='css/menu_style.css')}}" />
+    {% block stylesheet %}{% endblock %}
+
+</head>
+<body>
+    <header>
+        <div class="container">
+          <div class="logo">
+            <div>
+              <a href="/">
+                <img class="logo_img" src="{{url_for('static',filename='img/Logo.png')}}" alt="Logo"
+              /></a>
+              <h2 class="pag_name">{% block namesheet %}{% endblock %}</h2>
+            </div>
+            <h1 class="title"> <b>TJX e-Commerce</b><br /><b>Store</b></h1>
+          </div>
+  
+          <img src="{{url_for('static',filename='img/menu_open.png')}}" alt="Menú" class="icon_menu" id="btn_menu" />
+          <nav class="nav" id="nav">
+            <ul class="Menu">
+              <li class="Menu_item">
+                <a href="/" class="Menu_link select"><b>Inicio</b></a>
+              </li>
+  
+              <li class="Menu_item">
+                <a href="/login" class="Menu_link"><b>Cuenta</b></a>
+              </li>
+  
+              <li class="Menu_item">
+                <a href="/Tienda" class="Menu_link"><b>Tienda</b></a>
+              </li>
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </header>
+
+    {% for message in get_flashed_messages() %}
+      <div class="flash">
+        {{ message }}
+        <!-- <button type="button" data-dismiss="alert"><span aria-hidden="true">&times;</span></button> -->
+      </div>
+    {% endfor %}
+
+      {% block content %}{% endblock %}
+
+      <footer>
+        <div class="footer_container">
+          <a href=""
+            ><img src="{{url_for('static',filename='img/phone.png')}}" alt="Telefono" />
+            <p>Telefono</p></a
+          >
+          <a href=""
+            ><img src="{{url_for('static',filename='img/email.png')}}" alt="Correo" />
+            <p>Correo</p></a
+          >
+          <a href=""
+            ><img src="{{url_for('static',filename='img/location.png')}}" alt="Ubicacion" />
+            <p>Ubicacion</p></a
+          >
+        </div>
+      </footer>
+
+      {% block script %}{% endblock %}
+</body>
+</html>

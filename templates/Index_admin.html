@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TJX e-Commerce</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static',filename='css/menu_style.css')}}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='css/index_style.css')}}"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <div>
+            <a href="/">
+              <img
+                class="logo_img"
+                src="{{url_for('static',filename='img/Logo.png')}}"
+                alt="Logo"
+            /></a>
+            <h2 class="pag_name">DASHBOARD</h2>
+          </div>
+          <h1 class="title">TJX e-Commerce<br />Store</h1>
+        </div>
+
+        <img
+          src="{{url_for('static',filename='img/menu_open.png')}}"
+          alt="Menú"
+          class="icon_menu"
+          id="btn_menu"
+        />
+        <nav class="nav" id="nav">
+          <ul class="Menu">
+            <li class="Menu_item">
+              <a href="/" class="Menu_link select"><b>Inicio</b></a>
+            </li>
+
+            <li class="Menu_item">
+              <a href="/compras" class="Menu_link"><b>Cuenta</b></a>
+            </li>
+
+            <li class="Menu_item">
+              <a href="/Tienda" class="Menu_link"><b>Tienda</b></a>
+            </li>
+            
+            <li class="Menu_item">
+              <a href="/dashboard" class="Menu_link"><b>DashBoard</b></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+        <div class="welcome">
+          <div class="mision">
+            <h2>Nuestra Mision</h2>
+            <p>Queremos llevarte prodcutos de calidad y al mejor precio, para que disfrutes de calidad y economia</p>
+          </div>
+          <div class="vision">
+            <h2>Nuestra Vision</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At nemo iure nesciunt provident deleniti.</p>
+          </div>        
+        </div>
+    
+      <div class="entrada">
+        <h1>Productos destacados!!</h1>
+        <hr />
+      </div>
+    
+      <div class="products">
+    
+        {% for r in row  %}
+        <div class="products_item">
+          <h2>{{r["Nombre"]}}</h2>
+          {% if r["URL_prod"] == None %}
+            <img src="/static/img/paquete.png" alt="" />
+          {% else %}
+            <img src="/static/img/img_products/{{r['URL_prod']}}" alt="" />
+          {% endif %}
+          <p>{{r["Descripcion"]}}</p>
+          <a href="/producto/{{r['Nombre']}}"><button type="submit">Comprar</button></a>
+        </div>
+        {% endfor %}
+    
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer_container">
+        <a href=""
+          ><img
+            src="{{url_for('static',filename='img/phone.png')}}"
+            alt="Telefono"
+          />
+          <p>Telefono</p></a
+        >
+        <a href=""
+          ><img
+            src="{{url_for('static',filename='img/email.png')}}"
+            alt="Correo"
+          />
+          <p>Correo</p></a
+        >
+        <a href=""
+          ><img
+            src="{{url_for('static',filename='img/location.png')}}"
+            alt="Ubicacion"
+          />
+          <p>Ubicacion</p></a
+        >
+      </div>
+    </footer>
+
+    <script
+      src="{{url_for('static',filename='js/menu.js')}}"
+      type="module"
+    ></script>
+  </body>
+</html>

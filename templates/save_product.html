@@ -1,0 +1,52 @@
+{% extends "base/base.html" %}
+
+{% block title %} Producto {% endblock %}
+
+
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename='css/product_style.css')}}" />
+{% endblock %}
+
+{% block namesheet %}Producto{% endblock %}
+
+{% block content %}
+<main>
+    <form action="/guardar_producto" method="POST" enctype="multipart/form-data">
+        <div class="tarjeta_producto">
+            <div>
+                <h2 class="nombre_txt"><b>INFORMACION DEL PRODUCTO</b></h2>
+            </div>
+
+            <div class="img_datos">
+                <img src="{{url_for('static',filename='img/paquete.png')}}" alt="buscar" class="img_product" />
+                <div class="img_controles">
+                    <div class="botonera">
+                        <input type="file" name="archivo" accept=".png, .jpeg, .jpg">
+                    </div>
+                    <p><b>Nota: </b><i>La imagen después de cargada se verá reflejada en nombre del archivo que acompaña el boton una vez creado el producto tambien en la tienda, si no dispone de imagen se cargará por defecto la imagen de la izquierda</i></p>
+                </div>
+            </div>
+
+            <div>
+            <br>
+            <br>    
+                <p class="nombre_txt"><b>Nombre del producto: </b><input type="text" name="nom_p" size="40" > </p>
+                <p class="nombre_txt"><b>Precio: </b><input type="text" name="precio_p" size="40" > </p>
+                <p class="nombre_txt"><b>Cantidad: </b><input type="text" name="cant_p" size="40" > </p>
+            </div>
+            <p class="nombre_txt"><b>Descripción: </b><input type="text" name="desc_p" size="60" > </p>
+            <br> 
+            <div>
+                <input type="submit" class="guardarp" value="Guardar" id="btn_guardar">
+            </div>
+            <br>
+        </div>
+
+    </form>
+
+</main>
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static',filename='js/menu.js')}}" type="module"></script>
+{% endblock %}
