@@ -18,7 +18,7 @@ pip install -r requirements.txt
 ## Run server
 
 ```bash
-$ env\Scripts\activate
+env\Scripts\activate
 ```
 
 ## Despliegue
